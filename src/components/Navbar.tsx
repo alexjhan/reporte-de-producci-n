@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="container relative flex h-16 items-center">
         <a href="#" className="flex items-center gap-2.5">
           <Logo size={24} />
-          <span className="text-[15px] font-medium text-foreground">Faber</span>
+          <span className="text-[15px] font-medium text-foreground">Producción</span>
         </a>
 
         <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-7">
