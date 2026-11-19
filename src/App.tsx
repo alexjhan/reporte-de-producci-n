@@ -6,6 +6,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Registro from "./pages/Registro.tsx";
+import { initializeUsersDatabase } from "./lib/users.ts";
+
+initializeUsersDatabase();
 
 const queryClient = new QueryClient();
 

@@ -11,8 +11,7 @@ import { toast } from "sonner";
 const areas = [
   "Laser",
   "Habilitado",
-  "Pre ensamble inicial",
-  "Pre ensamble final",
+  "Pre ensamble",
   "Soldadura manual",
   "Soldadura con robot",
   "Pintura",
@@ -25,8 +24,8 @@ const areas = [
 const equipos = [
   { nombre: "Corte láser TRUMPF", serie: "LF-2401", cantidad: 12, inicio: "08 Ene 2026", entrega: "22 Ene 2026", avance: 68, area: "Laser" },
   { nombre: "Unidad hidráulica UH-40", serie: "UH-4018", cantidad: 8, inicio: "10 Ene 2026", entrega: "28 Ene 2026", avance: 45, area: "Habilitado" },
-  { nombre: "Sistema de evacuación", serie: "SE-1722", cantidad: 6, inicio: "12 Ene 2026", entrega: "30 Ene 2026", avance: 82, area: "Pre ensamble inicial" },
-  { nombre: "Chasis industrial CI-18", serie: "CI-1806", cantidad: 10, inicio: "15 Ene 2026", entrega: "04 Feb 2026", avance: 35, area: "Pre ensamble final" },
+  { nombre: "Sistema de evacuación", serie: "SE-1722", cantidad: 6, inicio: "12 Ene 2026", entrega: "30 Ene 2026", avance: 82, area: "Pre ensamble" },
+  { nombre: "Chasis industrial CI-18", serie: "CI-1806", cantidad: 10, inicio: "15 Ene 2026", entrega: "04 Feb 2026", avance: 35, area: "Pre ensamble" },
   { nombre: "Marco estructural MS-60", serie: "MS-6024", cantidad: 4, inicio: "16 Ene 2026", entrega: "06 Feb 2026", avance: 20, area: "Soldadura manual" },
 ];
 
