@@ -6,47 +6,47 @@
 
 @layer base {
   :root {
-    --background: 220 15% 3%;
-    --foreground: 210 10% 98%;
+    --background: 210 20% 98%;
+    --foreground: 215 25% 12%;
 
-    --card: 215 20% 7%;
-    --card-foreground: 210 10% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 12%;
 
-    --popover: 215 20% 7%;
-    --popover-foreground: 210 10% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 12%;
 
-    --primary: 199 89% 48%;
-    --primary-foreground: 220 15% 3%;
+    --primary: 199 89% 42%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 20% 10%;
-    --secondary-foreground: 210 10% 98%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 215 25% 12%;
 
-    --muted: 215 15% 18%;
-    --muted-foreground: 215 15% 55%;
+    --muted: 210 16% 94%;
+    --muted-foreground: 215 12% 42%;
 
-    --accent: 199 89% 48%;
-    --accent-foreground: 220 15% 3%;
+    --accent: 199 89% 42%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 215 15% 12%;
-    --input: 215 15% 12%;
-    --ring: 199 89% 48%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 199 89% 42%;
 
-    --radius: 9999px;
+    --radius: 6px;
 
-    --sidebar-background: 220 15% 5%;
-    --sidebar-foreground: 210 10% 98%;
-    --sidebar-primary: 199 89% 48%;
-    --sidebar-primary-foreground: 220 15% 3%;
-    --sidebar-accent: 215 20% 12%;
-    --sidebar-accent-foreground: 210 10% 98%;
-    --sidebar-border: 215 20% 15%;
-    --sidebar-ring: 199 89% 48%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 25% 12%;
+    --sidebar-primary: 199 89% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 215 25% 12%;
+    --sidebar-border: 214 20% 88%;
+    --sidebar-ring: 199 89% 42%;
 
-    --accent-glow: 199 89% 48%;
-    --surface-elevated: 215 20% 8%;
+    --accent-glow: 199 89% 42%;
+    --surface-elevated: 0 0% 100%;
   }
 }
 
@@ -73,9 +73,9 @@
   }
 
   .card-surface {
-    @apply rounded-2xl overflow-hidden;
-    background: hsl(var(--secondary));
-    box-shadow: 0 0 0 1px hsl(var(--border)), 0 4px 24px -8px rgba(0,0,0,0.4);
+    @apply rounded-lg overflow-hidden;
+    background: hsl(var(--card));
+    box-shadow: 0 0 0 1px hsl(var(--border)), 0 4px 24px -8px rgba(15,23,42,0.12);
   }
 
   .card-surface-hover {
@@ -83,7 +83,7 @@
   }
 
   .card-surface-hover:hover {
-    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3), 0 8px 32px -8px rgba(0,0,0,0.5);
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3), 0 8px 32px -8px rgba(15,23,42,0.16);
   }
 
   .tabular-nums {
