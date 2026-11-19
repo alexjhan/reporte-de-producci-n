@@ -13,10 +13,10 @@ const Footer = () => {
         >
           {/* Logo */}
           <div className="flex items-center gap-2.5">
-            <div className="w-6 h-6 rounded bg-blue-600 flex items-center justify-center flex-shrink-0">
-              <span className="text-white text-sm font-bold leading-none">F</span>
+            <div className="w-6 h-6 rounded red flex items-center justify-center flex-shrink-0">
+              <span className="text-white text-sm font-bold leading-none">NP</span>
             </div>
-            <span className="text-[14px] font-medium text-foreground">Faber</span>
+            <span className="text-[14px] font-medium text-foreground">Nova Producción</span>
           </div>
 
           {/* Contacto */}
