@@ -30,8 +30,8 @@
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 88%;
-    --input: 214 20% 88%;
+    --border: 210 17% 82%;
+    --input: 210 17% 82%;
     --ring: 199 89% 42%;
 
     --radius: 6px;
@@ -42,7 +42,7 @@
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 210 20% 96%;
     --sidebar-accent-foreground: 215 25% 12%;
-    --sidebar-border: 214 20% 88%;
+    --sidebar-border: 210 17% 82%;
     --sidebar-ring: 199 89% 42%;
 
     --accent-glow: 199 89% 42%;
@@ -73,7 +73,7 @@
   }
 
   .card-surface {
-    @apply rounded-lg overflow-hidden;
+    @apply rounded-[6px] overflow-hidden;
     background: hsl(var(--card));
     box-shadow: 0 0 0 1px hsl(var(--border)), 0 4px 24px -8px rgba(15,23,42,0.12);
   }

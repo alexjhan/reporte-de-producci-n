@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Progress } from "@/components/ui/progress";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { toast } from "sonner";
 
@@ -58,8 +57,8 @@ const Registro = () => {
 
       <section className="relative z-10 mx-auto max-w-[1440px] px-4 pb-10 pt-20 md:px-6">
 
-        <div className="grid min-h-[620px] overflow-hidden rounded-lg border border-border bg-card lg:grid-cols-[220px_minmax(0,1fr)]">
-          <aside className="border-b border-border bg-secondary/30 p-3 lg:border-b-0 lg:border-r">
+        <div className="grid min-h-[620px] overflow-hidden rounded-[6px] border border-border bg-card lg:grid-cols-[220px_minmax(0,1fr)]">
+          <aside className="border-b border-border bg-secondary/30 p-3 lg:sticky lg:top-20 lg:h-[620px] lg:self-start lg:border-b-0 lg:border-r">
             <p className="px-3 pb-3 pt-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Áreas</p>
             <nav className="grid gap-1" aria-label="Áreas de producción">
               {areas.map((area) => (
@@ -67,7 +66,7 @@ const Registro = () => {
                   key={area}
                   type="button"
                   onClick={() => setAreaSeleccionada(area)}
-                  className={`flex w-full items-center rounded-lg px-3 py-2.5 text-left text-sm transition-colors ${
+                  className={`flex w-full items-center rounded-[6px] px-3 py-2.5 text-left text-sm transition-colors ${
                     areaSeleccionada === area
                       ? "bg-primary text-primary-foreground"
                       : "text-muted-foreground hover:bg-secondary hover:text-foreground"
@@ -96,45 +95,39 @@ const Registro = () => {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-lg border border-border">
-              <Table>
-                <TableHeader>
+            <div className="max-h-[500px] overflow-auto rounded-[6px] border border-border">
+              <Table className="table-fixed min-w-[1000px]">
+                <TableHeader className="sticky top-0 z-10 bg-card">
                   <TableRow className="hover:bg-transparent">
-                    <TableHead>Nombre del equipo</TableHead>
-                    <TableHead>Serie</TableHead>
-                    <TableHead className="text-right">Cantidad</TableHead>
-                    <TableHead>Fecha de inicio</TableHead>
-                    <TableHead>Fecha de entrega</TableHead>
-                    <TableHead>Avance a la fecha</TableHead>
-                    <TableHead className="text-right">Acción</TableHead>
+                    <TableHead className="h-10 w-[220px] px-3 text-xs">Nombre del equipo</TableHead>
+                    <TableHead className="h-10 w-[110px] px-3 text-xs">Serie</TableHead>
+                    <TableHead className="h-10 w-[90px] px-3 text-right text-xs">Cantidad</TableHead>
+                    <TableHead className="h-10 w-[140px] px-3 text-xs">Fecha de inicio</TableHead>
+                    <TableHead className="h-10 w-[150px] px-3 text-xs">Fecha de entrega</TableHead>
+                    <TableHead className="h-10 w-[130px] px-3 text-xs">Avance a la fecha</TableHead>
+                    <TableHead className="h-10 w-[160px] px-3 text-right text-xs">Acción</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {equiposFiltrados.map((equipo) => (
-                    <TableRow key={equipo.serie}>
-                      <TableCell>
-                        <div className="flex items-center gap-3">
-                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <TableRow key={equipo.serie} className="border-border/70 hover:bg-secondary/45">
+                      <TableCell className="px-3 py-2.5">
+                        <div className="flex items-center gap-2.5">
+                          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[6px] bg-primary/10 text-primary">
                             <Factory className="h-4 w-4" />
                           </span>
-                          <span className="font-medium">{equipo.nombre}</span>
+                          <span className="truncate font-medium">{equipo.nombre}</span>
                         </div>
                       </TableCell>
-                      <TableCell className="font-mono text-xs text-muted-foreground">{equipo.serie}</TableCell>
-                      <TableCell className="text-right tabular-nums">{equipo.cantidad}</TableCell>
-                      <TableCell>{equipo.inicio}</TableCell>
-                      <TableCell>{equipo.entrega}</TableCell>
-                      <TableCell>
-                        <div className="min-w-32">
-                          <div className="mb-1.5 flex justify-between text-xs">
-                            <span className="text-muted-foreground">Avance</span>
-                            <span className="font-medium tabular-nums">{equipo.avance}%</span>
-                          </div>
-                          <Progress value={equipo.avance} className="h-1.5" />
-                        </div>
+                      <TableCell className="px-3 py-2.5 font-mono text-xs text-muted-foreground">{equipo.serie}</TableCell>
+                      <TableCell className="px-3 py-2.5 text-right tabular-nums">{equipo.cantidad}</TableCell>
+                      <TableCell className="px-3 py-2.5">{equipo.inicio}</TableCell>
+                      <TableCell className="px-3 py-2.5">{equipo.entrega}</TableCell>
+                      <TableCell className="px-3 py-2.5">
+                        <span className="font-medium tabular-nums">{equipo.avance}%</span>
                       </TableCell>
-                      <TableCell className="text-right">
-                        <Button size="sm" onClick={() => abrirRegistro(equipo)}>
+                      <TableCell className="px-3 py-2.5 text-right">
+                        <Button size="sm" className="h-8 px-2.5" onClick={() => abrirRegistro(equipo)}>
                           <Plus className="h-4 w-4" />
                           Registrar
                         </Button>
