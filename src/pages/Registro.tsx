@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { CalendarDays, Factory, Plus, Search } from "lucide-react";
+import { Factory, Plus, Search } from "lucide-react";
 import GridBackground from "@/components/GridBackground";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
@@ -101,10 +101,10 @@ const Registro = () => {
                   <TableRow className="hover:bg-transparent">
                     <TableHead className="h-10 w-[220px] px-3 text-xs">Nombre del equipo</TableHead>
                     <TableHead className="h-10 w-[110px] px-3 text-xs">Serie</TableHead>
-                    <TableHead className="h-10 w-[90px] px-3 text-right text-xs">Cantidad</TableHead>
-                    <TableHead className="h-10 w-[140px] px-3 text-xs">Fecha de inicio</TableHead>
-                    <TableHead className="h-10 w-[150px] px-3 text-xs">Fecha de entrega</TableHead>
-                    <TableHead className="h-10 w-[130px] px-3 text-xs">Avance a la fecha</TableHead>
+                    <TableHead className="h-10 w-[90px] px-3 text-center text-xs">Cantidad</TableHead>
+                    <TableHead className="h-10 w-[140px] px-3 text-center text-xs">Fecha de inicio</TableHead>
+                    <TableHead className="h-10 w-[150px] px-3 text-center text-xs">Fecha de entrega</TableHead>
+                    <TableHead className="h-10 w-[130px] px-3 text-center text-xs">Avance a la fecha</TableHead>
                     <TableHead className="h-10 w-[160px] px-3 text-right text-xs">Acción</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -120,11 +120,11 @@ const Registro = () => {
                         </div>
                       </TableCell>
                       <TableCell className="px-3 py-2.5 font-mono text-xs text-muted-foreground">{equipo.serie}</TableCell>
-                      <TableCell className="px-3 py-2.5 text-right tabular-nums">{equipo.cantidad}</TableCell>
-                      <TableCell className="px-3 py-2.5">{equipo.inicio}</TableCell>
-                      <TableCell className="px-3 py-2.5">{equipo.entrega}</TableCell>
-                      <TableCell className="px-3 py-2.5">
-                        <span className="font-medium tabular-nums">{equipo.avance}%</span>
+                      <TableCell className="px-3 py-2.5 text-center tabular-nums">{equipo.cantidad}</TableCell>
+                      <TableCell className="px-3 py-2.5 text-center">{equipo.inicio}</TableCell>
+                      <TableCell className="px-3 py-2.5 text-center">{equipo.entrega}</TableCell>
+                      <TableCell className="bg-emerald-500/10 px-3 py-2.5 text-center">
+                        <span className="font-medium tabular-nums text-emerald-950">{equipo.avance}%</span>
                       </TableCell>
                       <TableCell className="px-3 py-2.5 text-right">
                         <Button size="sm" className="h-8 px-2.5" onClick={() => abrirRegistro(equipo)}>
@@ -165,14 +165,7 @@ const Registro = () => {
             className="grid gap-4"
           >
             <label className="grid gap-2 text-sm font-medium">
-              Fecha
-              <div className="relative">
-                <CalendarDays className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                <Input type="date" required className="pl-9" />
-              </div>
-            </label>
-            <label className="grid gap-2 text-sm font-medium">
-              Avance producido
+              Avance
               <Input type="number" min="0" max="100" required placeholder="Porcentaje actual" />
             </label>
             <div className="flex justify-end gap-2 pt-2">

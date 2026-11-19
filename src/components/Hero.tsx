@@ -39,7 +39,7 @@ const Hero = () => {
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-[0.04]"
         style={{
-          background: "radial-gradient(circle, hsl(199 89% 48%) 0%, transparent 70%)"
+          background: "radial-gradient(circle, hsl(220 12% 10%) 0%, transparent 70%)"
         }}
       />
 
